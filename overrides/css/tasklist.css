@@ -1,0 +1,14 @@
+/* 任务列表样式 */
+
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.task-list-item input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

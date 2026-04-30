@@ -1,0 +1,205 @@
+site_name: Haifeng's AI Infra Lab
+site_author: Haifeng Lin
+site_url: https://lingebeng.github.io
+site_description: A personal tech blog focusing on AI Infrastructure
+copyright: Copyright &copy; 2026 - Present <a href="https://github.com/lingebeng/" target="_blank" rel="noopener">Haifeng Lin</a>
+
+theme:
+  name: material
+  language: zh
+  custom_dir: overrides
+
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tabs.link
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: 切换到浅色模式
+
+  font:
+    text: Roboto
+    code: JetBrains Mono
+
+  favicon: img/favicon.png
+
+  icon:
+    logo: material/book-open-page-variant
+    edit: material/pencil
+
+  static_templates:
+    - 404.html
+
+plugins:
+  - blogging:
+      locale: zh
+      dirs:
+        - blogs/posts
+      template: blog-card-cover.html
+      show_total: true
+      features:
+        tags:
+          index_page: tags/
+          insert: top
+  - callouts
+  - glightbox:
+      width: 80%
+  - minify:
+      minify_html: true
+  - mkdocs-video:
+      video_muted: True
+      video_controls: True
+      mark: "video"
+  - rss:
+      enabled: !ENV [CI, false]
+      use_material_social_cards: false
+  - search
+  - document-dates:
+      position: top
+      type: date
+      exclude:
+        - index.md
+        - blogs/index.md
+        - links.md
+        - about/index.md
+        - tags/index.md
+  - statistics:
+      words_per_minute: 200
+      page_check_metadata: reading_time
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - meta
+  - md_in_html
+  - nl2br
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: true
+      linenums_style: pymdownx-inline
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.magiclink
+  - pymdownx.saneheaders
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tilde
+  - sane_lists
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 4
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/mathjax.js
+  - js/copyright.js
+
+extra_css:
+  - css/custom.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - css/card.css
+  - css/tasklist.css
+  - css/footer-stats.css
+
+extra:
+  utterances:
+    repo: lingebeng/blog-comments
+    issue_term: pathname
+    label: comments
+    theme: preferred-color-scheme
+    light_theme: github-light
+    dark_theme: github-dark
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lingebeng/
+      name: GitHub
+
+nav:
+  - 🏠 Home: index.md
+  - 📝 Blogs:
+      - blogs/index.md
+      - Scaling-Book:
+          - blogs/scaling-book/index.md
+      - Pallas-Kernel:
+          - blogs/pallas-kernel/index.md
+      - SGLang-Jax:
+          - blogs/sglang-jax/index.md
+  - 📚 Notes:
+      - notes/index.md
+      - Algorithm:
+          - notes/algorithm/index.md
+      - Python:
+          - notes/python/index.md
+      - CS336:
+          - notes/cs336/index.md
+  - 📖 Paper Reading:
+      - paperreading/index.md
+  - 🏷️ Tags: tags/index.md
+  - 👤 About:
+      - about/index.md
+      - Running:
+          - about/running/index.md
+      - Scenery:
+          - about/scenery/index.md
+      - Thinking:
+          - about/thinking/index.md

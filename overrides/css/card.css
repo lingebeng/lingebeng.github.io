@@ -1,0 +1,203 @@
+/* 动漫风格博客卡片 */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 249, 252, 0.9));
+  background-clip: border-box;
+  border: 3px solid transparent;
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(135deg, #ff6b9d, #4facfe, #a18cd1);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.2);
+}
+
+[data-md-color-scheme="slate"] .card {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(15, 52, 96, 0.95));
+  background-image:
+    linear-gradient(#1a1a2e, #1a1a2e),
+    linear-gradient(135deg, #ff6b9d, #4facfe, #a18cd1);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b9d, #4facfe, #a18cd1, #ffd89b);
+  background-size: 200% 100%;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.card:hover {
+  transform: scale(1.03) translateY(-8px) rotate(0.5deg);
+  box-shadow: 0 12px 24px rgba(255, 107, 157, 0.4);
+}
+
+[data-md-color-scheme="slate"] .card:hover {
+  box-shadow: 0 12px 24px rgba(79, 172, 254, 0.5);
+}
+
+.card a {
+  border: none;
+  text-decoration: none;
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 0;
+  background: linear-gradient(135deg, #ff6b9d, #a18cd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.card-body ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog-post-description {
+  color: var(--md-default-fg-color--light);
+  margin: 0.5rem 0;
+  line-height: 1.8;
+  font-size: 0.95em;
+}
+
+.blog-post-extra {
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-post-extra::before {
+  content: "📅";
+  animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* 封面图片样式 */
+.blog-post-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post-cover img {
+  transition: all 0.4s ease;
+  border-radius: 1rem;
+}
+
+.blog-post-cover:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* 文件卡片样式 */
+.file-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+}
+
+.file-block:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(79, 172, 254, 0.1));
+  transform: translateX(8px);
+}
+
+[data-md-color-scheme="slate"] .file-block:hover {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(161, 140, 209, 0.2));
+}
+
+.file-title {
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.file-meta {
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+
+.file-body {
+  padding-left: 1em;
+  margin-right: auto;
+}
+
+/* 下载按钮 - 可爱的渐变按钮 */
+.down-button {
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.5em 1.2em;
+  background: linear-gradient(135deg, #ff6b9d, #a18cd1);
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease !important;
+}
+
+.down-button:is(:focus, :hover) {
+  background: linear-gradient(135deg, #a18cd1, #4facfe);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 172, 254, 0.4);
+}
+
+/* 标签样式 */
+.md-tag {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(79, 172, 254, 0.2));
+  border-radius: 1rem;
+  padding: 0.3em 0.8em;
+  font-size: 0.85em;
+  border: 2px solid rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease;
+}
+
+.md-tag:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.3), rgba(79, 172, 254, 0.3));
+  transform: scale(1.05);
+}
+

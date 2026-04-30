@@ -1,0 +1,20 @@
+[project]
+name = "lingebeng-github-io"
+version = "0.1.0"
+description = "Personal tech blog built with MkDocs Material"
+requires-python = ">=3.9"
+dependencies = [
+    "mkdocs>=1.5.0,<1.6.0",
+    "mkdocs-blogging-plugin",
+    "mkdocs-callouts",
+    "mkdocs-material",
+    "mkdocs-minify-plugin",
+    "mkdocs-glightbox",
+    "mkdocs-video",
+    "mkdocs-rss-plugin",
+    "mkdocs-document-dates>=3.4.9",
+    "mkdocs-statistics-plugin",
+]
+
+[dependency-groups]
+dev = []

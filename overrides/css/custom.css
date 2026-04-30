@@ -1,0 +1,453 @@
+/* 动漫风格主题 */
+
+:root {
+  --md-text-font: "Roboto", "LXGW WenKai Screen";
+  --md-code-font: "JetBrains Mono";
+  --base-border-radius: 1rem;
+
+  /* 动漫风格配色 */
+  --anime-pink: #ff6b9d;
+  --anime-blue: #4facfe;
+  --anime-purple: #a18cd1;
+  --anime-yellow: #ffd89b;
+  --anime-green: #7fdbca;
+}
+
+/* 标题样式 - 保持原色 */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: 0;
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+/* Emoji 保持原色 */
+.md-typeset h1 :is(.emojione,.twemoji,.gemoji) {
+  display: inline !important;
+}
+
+@keyframes titleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--anime-blue);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.md-typeset h2::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.md-typeset h3, .md-typeset h4 {
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--anime-purple);
+}
+
+/* 代码样式 - 可爱的圆角 */
+.md-typeset code:not(pre code) {
+  font-size: inherit;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(161, 140, 209, 0.1));
+  border-radius: 0.5rem;
+  padding: 0.2em 0.4em;
+  border: 1px solid rgba(255, 107, 157, 0.3);
+}
+
+.md-typeset pre {
+  border-radius: 1rem;
+  border: 2px solid rgba(79, 172, 254, 0.3);
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
+}
+
+/* 浅色模式配色 - 柔和的动漫风格 */
+[data-md-color-scheme="default"] {
+  --md-primary-bg-color: #fef5f8;
+  --md-default-bg-color: #fff9fc;
+  --md-footer-fg-color: #333;
+  --md-footer-bg-color: #fef5f8;
+  --md-footer-bg-color--dark: #fef5f8;
+  --md-footer-fg-color--light: #666;
+  --md-footer-fg-color--lighter: #999;
+  --md-code-bg-color: #fff;
+  --md-code-fg-color: var(--md-typeset-color);
+  --md-accent-fg-color: var(--anime-pink);
+}
+
+/* 深色模式配色 - 梦幻的夜空风格 */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1a1a2e;
+  --md-default-bg-color--light: #16213e;
+  --md-default-bg-color--lighter: #0f3460;
+  --md-default-bg-color--lightest: #533483;
+  --md-default-fg-color: rgba(255,255,255,0.95);
+  --md-default-fg-color--light: rgba(255,255,255,0.85);
+  --md-default-fg-color--lighter: rgba(255,255,255,0.75);
+  --md-default-fg-color--lightest: rgba(255,255,255,0.6);
+  --md-primary-fg-color: #16213e;
+  --md-typeset-a-color: var(--anime-blue);
+  --md-footer-fg-color: #fff;
+  --md-footer-bg-color: #16213e;
+  --md-footer-bg-color--dark: #0f3460;
+  --md-footer-fg-color--light: rgba(255,255,255,0.8);
+  --md-footer-fg-color--lighter: rgba(255,255,255,0.6);
+  --md-code-bg-color: #0f3460;
+  --md-accent-fg-color: var(--anime-pink);
+}
+
+/* 搜索框 - 可爱的圆角和渐变边框 */
+[data-md-color-scheme="slate"] input.md-search__input {
+  border-radius: var(--base-border-radius);
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(161, 140, 209, 0.1));
+  border: 2px solid rgba(255, 107, 157, 0.3);
+}
+
+[data-md-color-scheme="default"] input.md-search__input {
+  border-radius: var(--base-border-radius);
+  background: #fff;
+  border: 2px solid rgba(255, 107, 157, 0.3);
+}
+
+.md-search__form {
+  border-radius: var(--base-border-radius);
+}
+
+/* 版权信息 */
+.md-copyright {
+  font-size: .55rem;
+}
+
+/* 顶部导航栏 - 统一的二次元风格 */
+.md-header {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+}
+
+.md-header__title {
+  color: #fff !important;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.md-header__title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.md-header__button {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease;
+}
+
+.md-header__button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* 导航标签 - 与顶部无缝衔接 */
+.md-tabs {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  border-top: none !important;
+}
+
+.md-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+}
+
+.md-tabs__item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  filter: none !important;
+}
+
+.md-tabs__item:hover .md-tabs__link {
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+.md-tabs__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd89b, #19547b);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.md-tabs__item:hover::after {
+  width: 80%;
+}
+
+.md-tabs__link--active {
+  color: #fff !important;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+}
+
+/* 搜索框 - 二次元风格 */
+.md-search__form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.md-search__input {
+  color: #fff !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 左侧边栏导航 - 保持图标原色 */
+.md-nav__link {
+  filter: none !important;
+}
+
+.md-nav__item .md-nav__link {
+  filter: none !important;
+}
+
+/* 链接样式 - 渐变下划线 */
+.md-typeset a {
+  color: var(--anime-pink);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.md-typeset a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--anime-pink), var(--anime-blue));
+  transition: width 0.3s ease;
+}
+
+.md-typeset a:hover::after {
+  width: 100%;
+}
+
+/* 图片悬停效果 - 可爱的放大和发光 */
+img {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+  border: 3px solid transparent;
+}
+
+[data-md-color-scheme="default"] img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 24px rgba(255, 107, 157, 0.3);
+  border-color: var(--anime-pink);
+}
+
+[data-md-color-scheme="slate"] img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 24px rgba(79, 172, 254, 0.4);
+  border-color: var(--anime-blue);
+}
+
+/* 提示框样式 - 可爱的渐变背景 */
+[data-md-color-scheme="default"] .md-typeset .admonition,
+.md-typeset details {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.md-typeset .admonition.note {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(161, 140, 209, 0.1));
+  border-left: 4px solid var(--anime-blue);
+}
+
+.md-typeset .admonition.tip {
+  background: linear-gradient(135deg, rgba(127, 219, 202, 0.1), rgba(79, 172, 254, 0.1));
+  border-left: 4px solid var(--anime-green);
+}
+
+.md-typeset .admonition.warning {
+  background: linear-gradient(135deg, rgba(255, 216, 155, 0.1), rgba(255, 107, 157, 0.1));
+  border-left: 4px solid var(--anime-yellow);
+}
+
+.md-typeset .admonition.danger {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(161, 140, 209, 0.1));
+  border-left: 4px solid var(--anime-pink);
+}
+
+/* 数学公式 */
+.md-typeset div.arithmatex {
+  overflow-y: hidden;
+}
+
+/* 按钮样式 - 可爱的渐变按钮 */
+.md-button {
+  background: linear-gradient(135deg, var(--anime-pink), var(--anime-purple));
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  color: white !important;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease;
+}
+
+.md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
+}
+
+/* 响应式字体大小 */
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 137.5%;
+  }
+}
+
+/* 表格居中 */
+.md-typeset__table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.md-typeset__table {
+  display: table !important;
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  min-width: 0rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(79, 172, 254, 0.2));
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(79, 172, 254, 0.05));
+}
+
+/* Emoji 对齐并保持原色 */
+.md-typeset :is(.emojione,.twemoji,.gemoji) {
+  vertical-align: sub;
+  animation: emojiFloat 2s ease-in-out infinite;
+  filter: none !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  color: initial !important;
+}
+
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(5deg); }
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 107, 157, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--anime-pink), var(--anime-purple));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--anime-purple), var(--anime-blue));
+}
+
+/* 页面加载动画 */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.md-content {
+  animation: pageLoad 0.6s ease-out;
+}
+
+/* 返回顶部按钮 */
+.md-top {
+  background: linear-gradient(135deg, var(--anime-pink), var(--anime-purple)) !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4);
+  transition: all 0.3s ease;
+}
+
+.md-top:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 6px 16px rgba(255, 107, 157, 0.5);
+}
