@@ -19,7 +19,6 @@ theme:
     - content.footnote.tooltips
     - content.tabs.link
     - header.autohide
-    - navigation.expand
     - navigation.footer
     - navigation.tracking
     - navigation.tabs
@@ -198,3 +197,5 @@ nav:
           - about/scenery/index.md
       - Thinking:
           - about/thinking/index.md
+          - about/thinking/00-heart.md
+          - about/thinking/01-reflection.md
