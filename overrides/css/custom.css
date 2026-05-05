@@ -257,6 +257,11 @@
   filter: none !important;
 }
 
+/* 隐藏 Material 插件自动生成的标签，使用自定义标签 */
+.md-content article .md-tags {
+  display: none !important;
+}
+
 /* 链接样式 - 渐变下划线 */
 .md-typeset a {
   color: var(--anime-pink);

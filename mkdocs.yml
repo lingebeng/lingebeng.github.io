@@ -62,6 +62,8 @@ theme:
     - 404.html
 
 plugins:
+  - tags:
+      tags_file: tags/index.md
   - blogging:
       locale: zh
       dirs:
@@ -85,15 +87,6 @@ plugins:
       enabled: !ENV [CI, false]
       use_material_social_cards: false
   - search
-  - document-dates:
-      position: top
-      type: date
-      exclude:
-        - index.md
-        - blogs/index.md
-        - links.md
-        - about/index.md
-        - tags/index.md
   - statistics:
       words_per_minute: 200
       page_check_metadata: reading_time
@@ -152,6 +145,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - js/mathjax.js
   - js/copyright.js
+  - js/tags.js
 
 extra_css:
   - css/custom.css
@@ -180,6 +174,7 @@ nav:
       - blogs/index.md
       - Scaling-Book:
           - blogs/scaling-book/index.md
+          - 00 All About Rooflines: blogs/scaling-book/00-all-about-rooflines.md
       - Pallas-Kernel:
           - blogs/pallas-kernel/index.md
       - SGLang-Jax:
