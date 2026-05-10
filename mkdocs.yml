@@ -182,6 +182,9 @@ nav:
       - notes/index.md
       - Algorithm:
           - notes/algorithm/index.md
+          - Leetcode:
+            - notes/algorithm/leetcode/index.md
+            - notes/algorithm/leetcode/周赛501.md
       - Python:
           - notes/python/index.md
       - CS336:
@@ -195,7 +198,7 @@ nav:
           - about/running/index.md
       - Scenery:
           - about/scenery/index.md
-      - Thinking:
-          - about/thinking/index.md
-          - about/thinking/00-heart.md
-          - about/thinking/01-reflection.md
+      # - Thinking:
+      #     - about/thinking/index.md
+      #     - about/thinking/00-heart.md
+      #     - about/thinking/01-reflection.md
